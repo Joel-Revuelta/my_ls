@@ -10,7 +10,6 @@
 void print_hexa(int nb)
 {
     int temp;
-    int rem;
     int i = 1;
     char res[3];
     while (nb != 0) {

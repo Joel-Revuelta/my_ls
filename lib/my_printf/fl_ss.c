@@ -12,7 +12,6 @@ char *print_oct(int nb, char *res)
 {
     char *str = malloc(sizeof(char) * my_int_len(nb) + 1);
     int i = 0;
-    int count = 1;
 
     while (nb > 0) {
         str[i] = nb % 8 + 48;

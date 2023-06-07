@@ -51,7 +51,6 @@
     char **my_str_to_array(char const *str, char c);
     char *my_strdup_from(char const *src, int i);
     int	my_int_len(int nb);
-    int my_nbrlen(double nb);
     char *my_int_to_str(int nbr);
     int my_arr_len(char **arr);
     int my_printf(const char *format, ...);

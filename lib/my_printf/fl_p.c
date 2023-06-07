@@ -18,7 +18,7 @@ int fl_p(va_list list, flags_t flags, int *len)
     int i = 0;
 
     format = create_arg(flags, "s");
-    for (temp; a != 0; temp = a % 16, str[i] = chars[temp], i++, a /= 16);
+    for (; a != 0; temp = a % 16, str[i] = chars[temp], i++, a /= 16);
     str[i] = 'x';
     str[i + 1] = '0';
     str[i + 2] = '\0';

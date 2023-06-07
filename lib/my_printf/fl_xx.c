@@ -21,7 +21,7 @@ int add_spaces2(char *res, flags_t flags, int x)
     return (i);
 }
 
-char *finish_hexa2(char *res, flags_t flags, int i, int i2)
+void finish_hexa2(char *res, flags_t flags, int i, int i2)
 {
     for (; flags.p && i2 < flags.prec; res[i] = '0', i++, i2++);
     if (flags.flag.hash) {
@@ -36,12 +36,11 @@ char *finish_hexa2(char *res, flags_t flags, int i, int i2)
 void hexa2(int nb, flags_t flags, int *len)
 {
     char *res = malloc(sizeof(res)), *c = "0123456789ABCDEF0";
-    int temp = 0, rem = 0, i = add_spaces2(res, flags, 0), i2 = 0, old = 0;
+    int temp = 0, i = add_spaces2(res, flags, 0), i2 = 0;
 
     while (nb != 0) {
         temp = nb % 16;
         res[i++] = c[temp];
-        old = nb;
         nb /= 16;
         i2++;
     }
@@ -53,7 +52,7 @@ void hexa2(int nb, flags_t flags, int *len)
 void neg_hexa2(int nb, flags_t flags, int *len)
 {
     char *res = malloc(sizeof(res)), *c = "0123456789ABCDEF0";
-    int temp = 0, rem = 0, i = add_spaces2(res, flags, 8), i2 = 0, old = 0;
+    int temp = 0, i = add_spaces2(res, flags, 8), i2 = 0, old = 0;
 
     while (nb != 0) {
         if (temp == 16 && nb != 1)
@@ -80,4 +79,5 @@ int fl_xx(va_list list, flags_t flags, int *len)
         hexa2(nb, flags, len);
     else
         neg_hexa2(nb * -1, flags, len);
+    return (0);
 }

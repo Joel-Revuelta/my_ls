@@ -39,7 +39,7 @@ int fl_d(va_list list, flags_t flags, int *len)
     int nb = va_arg(list, int);
     int int_len = my_int_len(nb);
 
-    if (nb < 0 || flags.flag.plus || flags.flag.blank && flags.flag.minus)
+    if (nb < 0 || flags.flag.plus || (flags.flag.blank && flags.flag.minus))
         flags.min_w -= 1;
     if (flags.flag.zero)
         flags.prec = flags.min_w;

@@ -38,7 +38,6 @@ SRC	=	my_compute_power_rec.c		\
 		my_swap.c 					\
 		my_strdup_from.c 			\
 		my_int_len.c 				\
-		my_nbrlen.c 				\
 		my_int_to_str.c 			\
 		open_file.c 				\
 		my_arr_len.c 				\
@@ -64,7 +63,7 @@ OBJ	=	$(SRC:.c=.o)
 
 PRINTF_OBJ = $(PRINTF_SRC:.c=.o)
 
-CFLAGS = -w -Wall -Wextra -Werror -I .
+CFLAGS = -W -Wall -Wextra -Werror -I .
 
 NAME	=	libmy.a
 

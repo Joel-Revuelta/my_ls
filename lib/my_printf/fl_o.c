@@ -24,7 +24,7 @@ char *convert_to_octal(long int nb)
 void print_octal(flags_t flags, char *str, int *len)
 {
     int l = my_strlen(str);
-    if (flags.prec > len)
+    if (flags.prec > *len)
         l = flags.prec;
     if (flags.flag.hash)
         l += 1;

@@ -46,7 +46,7 @@ char *putdel_zero(char *str, int x)
     return (str);
 }
 
-char *round(char *ent, char *dec)
+void my_round(char *ent, char *dec)
 {
     int ent_len = my_strlen(ent), dec_len = my_strlen(dec), last = 0;
     if (dec[dec_len - 1] >= '5')
@@ -70,7 +70,7 @@ char *round(char *ent, char *dec)
     }
 }
 
-int floats_flag(double nb, flags_t flags, int *len)
+void floats_flag(double nb, flags_t flags, int *len)
 {
     long long int ent = (long long int)nb;
     nb -= ent;
@@ -85,7 +85,7 @@ int floats_flag(double nb, flags_t flags, int *len)
         dec[i] = (int)nb % 10 + '0';
         nb -= (int)nb;
     }
-    round(str_ent, dec);
+    my_round(str_ent, dec);
     str_ent = putdel_zero(str_ent, 0);
     print_float(flags, str_ent, dec, len);
 }
@@ -94,4 +94,5 @@ int fl_ff(va_list list, flags_t flags, int *len)
 {
     double nb = va_arg(list, double);
     floats_flag(nb, flags, len);
+    return (0);
 }
