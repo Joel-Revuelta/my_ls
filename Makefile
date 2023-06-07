@@ -21,7 +21,7 @@ TESTS = tests/printf_tests.c
 
 T_NAME = unit_tests
 
-T_FLAGS = -w -Wall -Wextra -Werror -I include/ -L ./ -lmy --coverage -lcriterion
+T_FLAGS = -W -Wall -Wextra -Werror -I include/ -L ./ -lmy --coverage -lcriterion
 
 all: 	$(NAME)
 

@@ -10,6 +10,7 @@
 
 int fl_n(va_list list, flags_t flags, int *len)
 {
+    (void)flags;
     int *x = va_arg(list, int *);
 
     *x = *len;

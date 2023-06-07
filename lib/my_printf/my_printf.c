@@ -8,9 +8,9 @@
 #include "my.h"
 #include "my_printf.h"
 
-fnc_t *init_fnc(fnc_t *fnc)
+fnc_t *init_fnc(void)
 {
-    fnc = malloc(sizeof(fnc_t) * 15);
+    fnc_t *fnc = malloc(sizeof(fnc_t) * 15);
     fnc[0] = (fnc_t){'c', fl_c};
     fnc[1] = (fnc_t){'d', fl_d};
     fnc[2] = (fnc_t){'i', fl_d};
@@ -32,7 +32,7 @@ fnc_t *init_fnc(fnc_t *fnc)
 
 int call_fnc(va_list list, char const *format, int i, int *len)
 {
-    fnc_t *fnc = init_fnc(fnc);
+    fnc_t *fnc = init_fnc();
     int f = 0;
     flags_t flags;
     i = g_fl(format, i, &flags);

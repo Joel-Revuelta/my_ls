@@ -38,6 +38,8 @@
     char *do_as_gflag(char *dec, int prec);
     long double e_round_dec(double a, int prec, long double b);
     long double e_round(double a);
+    void puc(char c);
+    int g_fl(char const *format, int i, flags_t *flags);
     int fl_c(va_list list, flags_t flags, int *len);
     int fl_d(va_list list, flags_t flags, int *len);
     int fl_prc(va_list list, flags_t flags, int *len);

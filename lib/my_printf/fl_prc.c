@@ -10,6 +10,8 @@
 
 int fl_prc(va_list list, flags_t flags, int *len)
 {
+    (void)list;
+    (void)flags;
     my_putchar('%');
     *len += 1;
     return (1);
